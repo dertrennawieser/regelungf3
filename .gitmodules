@@ -1,0 +1,3 @@
+[submodule "stmdriver"]
+	path = stmdriver
+	url = https://github.com/dertrennawieser/stmdriver.git
