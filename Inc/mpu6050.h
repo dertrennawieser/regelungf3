@@ -24,9 +24,9 @@
 
 #define SUM_LEN 200
 #define TXBUFFER_LEN 7
-#define ACCEL_X_OFFSET 688
-#define ACCEL_Y_OFFSET -264
-#define ACCEL_Z_OFFSET -2164
+#define ACCEL_X_OFFSET 0
+#define ACCEL_Y_OFFSET 0
+#define ACCEL_Z_OFFSET 0
 
 extern uint32_t APB1Clock;
 

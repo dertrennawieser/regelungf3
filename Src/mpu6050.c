@@ -45,7 +45,9 @@ void mpu_write(uint8_t reg_addr, uint8_t* data, uint8_t data_len)
 void mpu_read(uint8_t reg_addr, uint8_t* data, uint8_t data_len)
 {
 	i2c_start(i2c_reg, MPU_ADDRESS, &reg_addr, 1, data, data_len);
+
 	while(i2c_busy(i2c_reg));
+
 }
 
 bool mpu_connect(I2C_TypeDef* reg_ptr)
@@ -55,7 +57,7 @@ bool mpu_connect(I2C_TypeDef* reg_ptr)
 	static uint8_t datac[1] = {0};
 
 	i2c_reg = reg_ptr;
-	i2c_init(i2c_reg, true, APB1Clock);		//i2c with fast mode, does nothing if i2c already initialized
+	i2c_init(i2c_reg, true, 8000000);		//i2c with fast mode, does nothing if i2c already initialized
 
 	datac[0] = (1<<7);
 	mpu_write(MPU_PWR_MGMT_1, datac, 1);		//swrst mpu
